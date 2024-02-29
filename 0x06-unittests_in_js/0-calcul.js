@@ -2,7 +2,7 @@
 
 // Compute sum of 2 integers
 
-function calculateNumber(a, b) {
+function calculateNumber (a, b) {
   const roundedA = Math.round(a);
   const roundedB = Math.round(b);
 
