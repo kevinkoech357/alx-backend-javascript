@@ -1,9 +1,6 @@
-#!/usr/bin/env node
-
-// Test cases for 1-calcul.js
-
-import { expect } from 'chai';
-import calculateNumber from './2-calcul_chai.js';
+const expect = require('chai').expect;
+const { describe, it } = require('mocha');
+const calculateNumber = require('./2-calcul_chai');
 
 describe('calculateNumber', function () {
   it('should return the sum of rounded numbers', function () {
@@ -25,6 +22,6 @@ describe('calculateNumber', function () {
   });
 
   it('should return error for division by zero', function () {
-    expect(calculateNumber('DIVIDE', 5, 0), Error);
+    expect(calculateNumber('DIVIDE', 5, 0), 'Error');
   });
 });

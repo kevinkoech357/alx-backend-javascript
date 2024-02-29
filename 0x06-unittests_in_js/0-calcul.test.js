@@ -1,8 +1,5 @@
-#!/usr/bin/env node
-
-// Test calculateNumber func
-
 const assert = require('assert');
+const { describe, it } = require('mocha');
 const calculateNumber = require('./0-calcul');
 
 describe('calculateNumber', function () {
