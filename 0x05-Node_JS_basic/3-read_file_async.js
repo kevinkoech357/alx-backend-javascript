@@ -19,7 +19,7 @@ function countStudents(filepath) {
 
       const lines = data.toString().split('\n');
 
-      for (let i = 0; i < lines.length; i++) {
+      for (let i = 0; i < lines.length; i += 1) {
         if (lines[i]) {
           const fieldsArr = lines[i].toString().split(',');
 
@@ -28,7 +28,7 @@ function countStudents(filepath) {
 
           // If the field is either CS or SWE
           if (field === 'CS' || field === 'SWE') {
-            fields[field]++;
+            fields[field] += 1;
             students[field].push(fieldsArr[0]);
           }
         }
@@ -42,7 +42,9 @@ function countStudents(filepath) {
 
       // Log the number of students in each field and their respective lists
       for (const field in fields) {
-        console.log(`Number of students in ${field}: ${fields[field]}. List: ${students[field].join(', ')}`);
+        if (Object.prototype.hasOwnProperty.call(fields, field)) {
+          console.log(`Number of students in ${field}: ${fields[field]}. List: ${students[field].join(', ')}`);
+        }
       }
 
       resolve();
