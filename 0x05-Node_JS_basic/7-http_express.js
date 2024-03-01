@@ -5,7 +5,7 @@ const app = express();
 
 app.get('/', (req, res) => {
   res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello Holberton School!\n');
+  res.end('Hello Holberton School!');
 });
 
 app.get('/students', (req, res) => {

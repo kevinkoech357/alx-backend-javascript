@@ -6,7 +6,7 @@ const app = http.createServer((req, res) => {
 
   if (req.url === '/') {
     // Respond with "Hello Holberton School!" for the root URL
-    res.end('Hello Holberton School!\n');
+    res.end('Hello Holberton School!');
   } else if (req.url === '/students') {
     // If the URL path is /students, process student data
     const filepath = process.argv[2];
