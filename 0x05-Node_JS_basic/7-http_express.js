@@ -15,11 +15,10 @@ app.get('/students', (req, res) => {
   try {
     const output = countStudents(filepath);
     res.write('This is the list of our students\n');
-    res.end(output);
+    res.status(200).end(output);
   } catch (error) {
     console.error(error);
-    res.statusCode = 500;
-    res.end('Internal Server Error');
+    res.status(500).end('Internal Server Error');
   }
 });
 

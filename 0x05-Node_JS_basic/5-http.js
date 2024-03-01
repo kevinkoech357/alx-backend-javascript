@@ -11,9 +11,10 @@ const app = http.createServer((req, res) => {
     // If the URL path is /students, process student data
     const filepath = process.argv[2];
     try {
-      res.write('This is the list of our students\n');
+      res.write('This is the list of our students');
       countStudents(filepath)
         .then((output) => {
+          res.statusCode(200);
           res.end(output);
         })
         .catch((error) => {
